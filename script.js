@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     detailsBtn.addEventListener('click', function() {
         modal.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+        document.body.style.overflow = 'hidden';
     });
     
     closeBtn.addEventListener('click', function() {
@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         const email = document.getElementById('email').value;
         
-        // Simple validation
         if (email && email.includes('@')) {
             alert('Thank you for subscribing to our newsletter!');
             newsletterForm.reset();
@@ -39,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Animate elements when they come into view
     const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.feature, .logo, .stat-card');
+        const elements = document.querySelectorAll('.feature, .stat-card');
         
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
@@ -53,12 +52,12 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     // Set initial state for animation
-    document.querySelectorAll('.feature, .logo, .stat-card').forEach(element => {
+    document.querySelectorAll('.feature, .stat-card').forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';
         element.style.transition = 'all 0.6s ease';
     });
     
     window.addEventListener('scroll', animateOnScroll);
-    animateOnScroll(); // Run once on page load
+    animateOnScroll();
 });
