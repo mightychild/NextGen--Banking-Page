@@ -75,35 +75,62 @@ h1 {
     box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
 }
 
-.trusted-section {
-    padding: 60px 0;
+.trusted-partners {
+    padding: 80px 0;
+    background-color: #f9f9ff;
     text-align: center;
-    background-color: white;
-    border-radius: 20px;
-    margin: 40px auto;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
 }
 
-.trusted-section h3 {
-    margin-bottom: 30px;
+.trusted-partners h3 {
+    margin-bottom: 50px;
     color: var(--dark);
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
-.logos {
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.marquee-content {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
+    width: fit-content;
+    animation: scroll 30s linear infinite;
 }
 
-.logo {
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: var(--primary);
-    padding: 10px 20px;
-    border: 2px solid var(--secondary);
-    border-radius: 10px;
+.partner-logo {
+    flex: 0 0 auto;
+    width: 160px;
+    margin: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.partner-logo img {
+    max-width: 100%;
+    height: 40px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.8);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.partner-logo:hover img {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 .stats-section {
@@ -337,11 +364,6 @@ footer h3 {
         font-size: 1rem;
     }
     
-    .logos {
-        flex-direction: column;
-        align-items: center;
-    }
-    
     .form-group {
         flex-direction: column;
     }
@@ -353,6 +375,15 @@ footer h3 {
     .modal-content {
         margin: 20% auto;
         width: 90%;
+    }
+
+    .partner-logo {
+        width: 120px;
+        margin: 0 25px;
+    }
+    
+    .partner-logo img {
+        height: 30px;
     }
 }
 
